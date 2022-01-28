@@ -1,11 +1,14 @@
-const getUserByEmail = function (email) {
-  for (const id in users) {
-    const user = users[id];
-    if (user.email === email) {
-      return user;
+const checkUserByEmail = function(emailInput, users) {
+  for (let user in users) {
+
+    if (users[user].email === emailInput) {
+      return users[user];
     }
   }
-  return null;
+  return undefined;
 };
 
-module.exports = { getUserByEmail };
+
+module.exports = {
+  checkUserByEmail,
+}
